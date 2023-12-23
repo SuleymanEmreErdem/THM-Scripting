@@ -5,8 +5,6 @@ def decode_b64(b64_string):
 
 decoded_string = open('b64.txt', 'r').read()
 
-#print(text)
-
 for _ in range(50):
     decoded_string = decode_b64(decoded_string)
 
