@@ -9,8 +9,8 @@ while port != 9765:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((ip, port))
         print('Connection')
-        gRequest = f"GET / HTTP/1.0\r\nHost: {ip}:{port}\r\n\r\n"
-        s.send(gRequest.encode('utf8'))
+        req = f"GET / HTTP/1.0\r\nHost: {ip}:{port}\r\n\r\n"
+        s.send(req.encode('utf8'))
         response = (s.recv(1024).decode('utf-8').split('\r\n\r\n'))[1]
         print('Response:', response)
         
